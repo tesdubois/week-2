@@ -57,10 +57,27 @@
       ext: 'png'
     }).addTo(map);
 
-    /* =====================
 
-    Start code
+    var restaurantData = [
+      [39.960270, -75.190660, "Sabrina's Cafe @ Powelton"],
+      [39.948999, -75.166242, "Good Dog"],
+      [39.974438, -75.182481, "RyBrew"],
+      [39.943648, -75.157361, "Percy Street Barbecue"],
+      [40.030846, -75.206059, "Dalessandro's"]
+    ];
+    for (var i = 0; i< restaurantData.length; i++) {
+      console.log(restaurantData[i][2]);
+    L.marker(restaurantData[i]).addTo(map).bindPopup(restaurantData[i][2]);
 
+  };
+/*
+
+var restaurantData = [[39.960270, -75.190660, "Sabrina's Cafe @ Powelton"], [39.948999, -75.166242, "Good Dog"], [39.974438, -75.182481, "RyBrew"], [39.943648, -75.157361, "Percy Street Barbecue"], [40.030846, -75.206059, "Dalessandro's"]];
+for (var i = 0; i< restaurantData.length+1; i++) {
+L.marker(restaurantData[[i]]).addTo(map);
+marker.bindPopup("popupContent").openPopup(i);
+}
+};
     ===================== */
 
     L.marker([0, 0]).addTo(map);

@@ -58,20 +58,70 @@
 
       ===================== */
 
-      var jsonToCsv = function(json) { console.log(json); };
+    //
+    var keys = ["LNG",
+      "LAT",
+      "OBJECTID",
+      "NAME",
+      "ORGANIZATION",
+      "ZIP",
+      "PHONE",
+      "WEBSITE",
+      "DENTAL_PHONE",
+      "FULL_ADDRESS"]
 
+  var jsonToCsv = function(json) {
+    var myArray = [];
+    for (var i = 0; i < json.length; i++) {
+      var tempArray = [];
+      for (var j = 0; j < keys.length; j++) {
+        tempArray.push(json[i][keys[j]]);
+      }
+      myArray.push(tempArray)
+    }
+    return myArray;
+  }
+    console.log(jsonToCsv(healthCenters))
 
-      var addMarkers = function(map) {};
+    for (i = 0; i < healthCenters.length; i++) {
+      L.marker([healthCenters[i].LAT, healthCenters[i].LNG], {draggable: true}).addTo(map).bindPopup(healthCenters[i].NAME);
+    }
+  // console.log(myArray)
+        // { console.log(json); };
 
-      /* =====================
+        // console.log(keys)
+      // var addMarkers = function(map) {};
+      // var makeARow = function(obj) {
+      // var myArray = [];
+      // for (key in obj) {
+      // myArray.push(obj[key]);
+      // }
+      // return myArray;
+      // }
+      // makeARow(first)
+// [-75.16472099534634, 40.034508187448395, 1, "Covenant House Health Services", "Covenant", 19144, "215-844-0181", "http://covenanthousehealth.org/", "N/A", "251 East Bringhurst Street"]
+
+//
+// for (i=0; i<healthCenters.length; i++) {
+// console.log(makeARow(healthCenters[i]));
+// }
+// var makeACSV = function(arr) {
+// var myArray = [];
+// Object.keys(arr[0];
+// for (i=0; i<arr.length; i++) {
+// myArray.push(arr{i});
+// }
+// return myArray
+// }
+    /* =====================
 
       End code
 
       ===================== */
-
-
-      jsonToCsv(healthCenters);
-      addMarkers(map);
+      //
+      //
+      // jsonToCsv(healthCenters);
+      // addMarkers(map);
     </script>
     <!--Your code ends here-->
   </body>
